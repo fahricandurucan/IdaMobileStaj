@@ -8,12 +8,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  double _textSize = 16.0; // Default text size
+  double _textSize = 16.0;
   double rectWidth = 0.0;
   double rectHeight = 0.0;
   final double cardWidth = 85.60;
   final double cardHeight = 53.98;
-  double _sliderValue = 1.0; // Slider initial value
+  double _sliderValue = 1.0;
 
   @override
   void didChangeDependencies() {
@@ -30,7 +30,6 @@ class _HomePageState extends State<HomePage> {
 
   void _updateRectSize(double scale) {
     final double adjustedScale = 1.0 + ((scale - 1.0) * 0.2);
-
     final double devicePixelRatio = MediaQuery.of(context).devicePixelRatio;
     final double dpi = 80.0 * devicePixelRatio;
     rectWidth = cardWidth / 25.4 * dpi * adjustedScale;
@@ -51,101 +50,103 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Metin Boyutu Ölçeklendirme'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Stack(
-            alignment: Alignment.center,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.all(12),
-                    width: rectWidth,
-                    height: rectHeight,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.blue),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Kredi Kartı',
-                        style: TextStyle(fontSize: _textSize),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Stack(
+              alignment: Alignment.center,
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.all(12),
+                      width: rectWidth,
+                      height: rectHeight,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blue),
+                      ),
+                      child: Center(
+                        child: Text(
+                          'Kredi Kartı',
+                          style: TextStyle(fontSize: _textSize),
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Positioned(
-                bottom: 0,
-                right: 0,
-                child: Container(
-                  width: 20,
-                  height: 20,
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Colors.blue,
+                  ],
+                ),
+                Positioned(
+                  bottom: 0,
+                  right: 0,
+                  child: Container(
+                    width: 20,
+                    height: 20,
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: Colors.blue,
+                        ),
+                        right: BorderSide(color: Colors.blue),
                       ),
-                      right: BorderSide(color: Colors.blue),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                top: 0,
-                left: 0,
-                child: Container(
-                  width: 20,
-                  height: 20,
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      top: BorderSide(
-                        color: Colors.blue,
+                Positioned(
+                  top: 0,
+                  left: 0,
+                  child: Container(
+                    width: 20,
+                    height: 20,
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        top: BorderSide(
+                          color: Colors.blue,
+                        ),
+                        left: BorderSide(color: Colors.blue),
                       ),
-                      left: BorderSide(color: Colors.blue),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                bottom: 0,
-                left: 0,
-                child: Container(
-                  width: 20,
-                  height: 20,
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      bottom: BorderSide(
-                        color: Colors.blue,
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  child: Container(
+                    width: 20,
+                    height: 20,
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          color: Colors.blue,
+                        ),
+                        left: BorderSide(color: Colors.blue),
                       ),
-                      left: BorderSide(color: Colors.blue),
                     ),
                   ),
                 ),
-              ),
-              Positioned(
-                top: 0,
-                right: 0,
-                child: Container(
-                  width: 20,
-                  height: 20,
-                  decoration: const BoxDecoration(
-                    border: Border(
-                      top: BorderSide(
-                        color: Colors.blue,
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: Container(
+                    width: 20,
+                    height: 20,
+                    decoration: const BoxDecoration(
+                      border: Border(
+                        top: BorderSide(
+                          color: Colors.blue,
+                        ),
+                        right: BorderSide(color: Colors.blue),
                       ),
-                      right: BorderSide(color: Colors.blue),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          _calibrationButton(),
-          const SizedBox(height: 20),
-          _sliderWidget(),
-        ],
+              ],
+            ),
+            _calibrationButton(),
+            const SizedBox(height: 20),
+            _sliderWidget(),
+          ],
+        ),
       ),
     );
   }
