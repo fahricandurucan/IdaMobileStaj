@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:screen_measurement2/screens/home_page.dart';
+
+import 'screens/denem.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,8 +11,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
+        useMaterial3: true,
+      ),
+      darkTheme: ThemeData.dark(),
+      themeMode: ThemeMode.dark,
+      // home: const HomePage(),
+      home: Deneme(),
     );
   }
 }
