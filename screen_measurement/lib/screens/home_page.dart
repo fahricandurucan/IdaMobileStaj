@@ -44,8 +44,8 @@ class _HomePageState extends State<HomePage> {
     double myRatio = screenWidth / cardWidthInPixels;
     double newTextSize = 16.0 * myRatio;
 
+    // for web part
     if (kIsWeb) {
-      // Tarayıcı metin boyutunu hesaba katarak bir oran hesapla
       double textScaleFactor = MediaQuery.of(context).textScaleFactor;
       if (textScaleFactor == 1.0) {
         newTextSize = 50.0;
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
     }
 
     // if (kIsWeb) {
-    //   newTextSize *= 0.5; // Web platformu için
+    //   newTextSize *= 0.5;
     // }
 
     return newTextSize;
