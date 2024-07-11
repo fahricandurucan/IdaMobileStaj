@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
         print("Error loading or playing sound: $e");
       }
     } else {
-      // Mobil platformu çalışırken
+      // Mobil(tablet) platformu çalışırken
       print("Mobile platformunda çalıştırıldı");
       try {
         await player.setAsset('assets/voice1.mp3'); //load
